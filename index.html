@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>一般社団法人 アクセスリーディング協会</title>
-  <meta name="description" content="一般社団法人アクセスリーディング協会 活動休止のご案内。感情診断テストKIOKUは2029年3月まで継続してご利用いただけます。" />
+  <title>活動休止のご案内 | 一般社団法人 アクセスリーディング協会</title>
+  <meta name="description" content="一般社団法人アクセスリーディング協会 活動休止のご案内。代表理事 吉武大輔よりご挨拶。" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -15,11 +15,10 @@
       --green:      #3A9E90;
       --green-dark: #2b7a6e;
       --green-deep: #1e5c52;
-      --green-pale: #f0f7f6;
-      --green-mid:  #d4ecea;
+      --green-pale: #f2f8f7;
+      --border:     #d8e8e6;
       --text:       #1e1e1e;
       --muted:      #5a5a5a;
-      --border:     #d8e8e6;
     }
 
     html { scroll-behavior: smooth; }
@@ -27,10 +26,9 @@
     body {
       font-family: "Noto Serif JP", "游明朝", "Yu Mincho", "Hiragino Mincho ProN", serif;
       color: var(--text);
-      line-height: 1.9;
+      line-height: 1.95;
       background: #fff;
       font-weight: 300;
-      font-size: 16px;
     }
 
     img { max-width: 100%; height: auto; display: block; }
@@ -42,7 +40,7 @@
       background: rgba(255,255,255,.97);
       border-bottom: 1px solid var(--border);
       z-index: 200;
-      height: 68px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -55,438 +53,246 @@
       text-decoration: none;
     }
     .nav-logo img {
-      width: 36px;
-      height: 36px;
+      width: 34px; height: 34px;
       object-fit: contain;
       border-radius: 50%;
     }
-    .nav-logo-text { display: flex; flex-direction: column; gap: 1px; }
     .nav-logo-text .en {
-      font-size: .66rem;
+      font-size: .62rem;
       letter-spacing: .16em;
       color: var(--green);
       text-transform: uppercase;
+      display: block;
     }
     .nav-logo-text .ja {
-      font-size: .76rem;
+      font-size: .74rem;
       letter-spacing: .05em;
       color: var(--green-deep);
+      display: block;
     }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a {
-      font-size: .8rem;
+    .nav-contact {
+      font-size: .74rem;
       letter-spacing: .08em;
       color: var(--muted);
       text-decoration: none;
       transition: color .2s;
     }
-    .nav-links a:hover { color: var(--green); }
+    .nav-contact:hover { color: var(--green); }
 
     /* ════════ HERO ════════ */
     .hero {
-      margin-top: 68px;
+      margin-top: 64px;
       position: relative;
-      height: 480px;
+      height: 360px;
       background: var(--green-pale);
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
-      overflow: hidden;
-    }
-    .hero-photo-placeholder {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, #c8e6e3 0%, #e8f5f3 50%, #d4ecea 100%);
       display: flex;
       align-items: center;
       justify-content: center;
+      overflow: hidden;
     }
-    .hero-photo-placeholder span {
-      font-size: .82rem;
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #c8e6e3 0%, #e8f5f3 50%, #d4ecea 100%);
+    }
+    .hero-photo-note {
+      position: absolute;
+      bottom: 16px;
+      right: 20px;
+      font-size: .72rem;
       color: var(--green-dark);
-      letter-spacing: .1em;
-      opacity: .5;
+      opacity: .45;
+      letter-spacing: .08em;
     }
     .hero-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to right, rgba(30,92,82,.65) 0%, rgba(30,92,82,.2) 60%, transparent 100%);
+      background: linear-gradient(to bottom, rgba(30,92,82,.18) 0%, rgba(30,92,82,.45) 100%);
     }
-    .hero-text {
+    .hero-center {
       position: relative;
       z-index: 2;
-      padding: 0 56px 52px;
+      text-align: center;
       color: #fff;
     }
-    .hero-text .catch {
-      font-size: clamp(1.6rem, 4vw, 2.6rem);
-      font-weight: 300;
-      letter-spacing: .14em;
-      line-height: 1.4;
-      margin-bottom: 10px;
-      text-shadow: 0 1px 8px rgba(0,0,0,.2);
+    .hero-center img {
+      width: 64px; height: 64px;
+      object-fit: contain;
+      margin: 0 auto 16px;
+      filter: drop-shadow(0 2px 12px rgba(0,0,0,.25));
     }
-    .hero-text .sub {
-      font-size: clamp(.82rem, 1.8vw, .96rem);
-      letter-spacing: .12em;
-      opacity: .9;
+    .hero-center .catch {
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+      font-weight: 300;
+      letter-spacing: .18em;
+      text-shadow: 0 2px 10px rgba(0,0,0,.2);
+      margin-bottom: 6px;
+    }
+    .hero-center .sub {
+      font-size: clamp(.8rem, 1.8vw, .94rem);
+      letter-spacing: .14em;
+      opacity: .88;
       text-shadow: 0 1px 4px rgba(0,0,0,.2);
     }
-    .hero-logo-badge {
-      position: absolute;
-      top: 32px;
-      left: 56px;
-      z-index: 3;
-    }
-    .hero-logo-badge img {
-      width: 56px;
-      height: 56px;
-      object-fit: contain;
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,.2));
-    }
 
-    /* ════════ NOTICE ════════ */
-    .notice {
-      background: #fffbf0;
-      border-top: 4px solid #c8a030;
-      border-bottom: 1px solid #e8d898;
-      padding: 48px 40px;
-    }
-    .notice-inner { max-width: 900px; margin: 0 auto; }
-    .notice-label {
-      display: inline-block;
-      background: #c8a030;
-      color: #fff;
-      font-size: .72rem;
-      letter-spacing: .14em;
-      padding: 4px 16px;
-      margin-bottom: 20px;
-    }
-    .notice-title {
-      font-size: clamp(1.5rem, 4vw, 2.4rem);
-      font-weight: 700;
-      color: var(--text);
-      letter-spacing: .06em;
-      line-height: 1.4;
-      margin-bottom: 28px;
-    }
-    .notice-title span {
-      display: block;
-      font-size: clamp(.9rem, 2vw, 1.1rem);
-      font-weight: 400;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-    .notice-body {
-      font-size: clamp(.85rem, 2vw, .95rem);
-      color: #333;
-      line-height: 2.1;
-      max-width: 760px;
-    }
-    .notice-body strong { font-weight: 500; color: var(--text); }
-    .notice-date {
-      margin-top: 28px;
-      font-size: .88rem;
-      color: var(--muted);
-      text-align: right;
-      max-width: 760px;
-    }
-
-    /* ════════ INFO CARDS ════════ */
-    .info-section {
-      padding: 72px 40px;
-      background: #f7faf9;
-    }
-    .info-inner { max-width: 900px; margin: 0 auto; }
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-    .info-card {
+    /* ════════ LETTER ════════ */
+    .letter-wrap {
+      padding: 80px 24px 100px;
       background: #fff;
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--green);
-      padding: 32px 28px;
     }
-    .info-card-head {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid var(--green-mid);
-    }
-    .info-card-num {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--green);
-      color: #fff;
-      font-size: .78rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-weight: 500;
-    }
-    .info-card-title {
-      font-size: .9rem;
-      font-weight: 500;
-      letter-spacing: .06em;
-      color: var(--green-deep);
-    }
-    .info-card-body {
-      font-size: .86rem;
-      color: #444;
-      line-height: 2;
-    }
-    .info-card-body strong { font-weight: 500; color: var(--text); }
-    .info-card-link {
-      display: inline-block;
-      margin-top: 16px;
-      background: var(--green);
-      color: #fff;
-      font-size: .78rem;
-      letter-spacing: .1em;
-      padding: 9px 24px;
-      text-decoration: none;
-      transition: background .2s;
-    }
-    .info-card-link:hover { background: var(--green-dark); }
-    .kioku-card { border-top-color: var(--green-dark); }
-    .kioku-btn-wrap { margin-top: 18px; display: flex; flex-direction: column; gap: 10px; }
-    .btn-kioku-main {
-      display: inline-block;
-      background: var(--green);
-      color: #fff;
-      font-family: inherit;
-      font-size: .85rem;
-      letter-spacing: .1em;
-      padding: 12px 28px;
-      text-decoration: none;
-      text-align: center;
-      transition: background .2s;
-    }
-    .btn-kioku-main:hover { background: var(--green-dark); }
-    .kioku-note {
-      font-size: .76rem;
-      color: var(--green-dark);
-      font-weight: 500;
-      letter-spacing: .04em;
-    }
-
-    /* ════════ CLOSING ════════ */
-    .closing {
-      padding: 72px 40px;
-      background: #fff;
-      border-top: 1px solid var(--border);
-    }
-    .closing-inner {
-      max-width: 760px;
+    .letter {
+      max-width: 720px;
       margin: 0 auto;
     }
-    .closing-inner p {
-      font-size: clamp(.85rem, 2vw, .95rem);
-      color: #444;
-      line-height: 2.2;
-      margin-bottom: 20px;
-    }
-    .closing-sign {
-      margin-top: 36px;
-      font-size: .9rem;
-      color: var(--muted);
-      text-align: right;
-      line-height: 2;
+
+    /* ラベル */
+    .letter-label {
+      display: inline-block;
+      border: 1px solid var(--green);
+      color: var(--green);
+      font-size: .68rem;
+      letter-spacing: .2em;
+      padding: 4px 18px;
+      margin-bottom: 28px;
     }
 
-    /* ════════ CONTACT ════════ */
-    .contact {
-      padding: 72px 40px;
+    /* タイトル */
+    .letter-title {
+      font-size: clamp(1.5rem, 5vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: .05em;
+      line-height: 1.45;
+      color: var(--text);
+      border-left: 5px solid var(--green);
+      padding-left: 20px;
+      margin-bottom: 8px;
+    }
+    .letter-title-sub {
+      font-size: clamp(.85rem, 2vw, 1.05rem);
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: .06em;
+      padding-left: 25px;
+      margin-bottom: 52px;
+    }
+
+    /* 罫線 */
+    .letter-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 44px;
+    }
+
+    /* 本文 */
+    .letter-body {
+      font-size: clamp(.9rem, 2.2vw, 1.04rem);
+      color: #333;
+      line-height: 2.3;
+    }
+    .letter-body p { margin-bottom: 1.6em; }
+    .letter-body p:last-child { margin-bottom: 0; }
+    .letter-body strong {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* 署名 */
+    .letter-sign {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      text-align: right;
+      font-size: clamp(.88rem, 2vw, 1rem);
+      color: var(--muted);
+      line-height: 2.2;
+    }
+
+    /* ════════ CONTACT STRIP ════════ */
+    .contact-strip {
       background: var(--green-pale);
       border-top: 1px solid var(--border);
+      padding: 56px 24px;
     }
-    .contact-inner { max-width: 900px; margin: 0 auto; }
-    .contact-label {
-      font-size: .68rem;
-      letter-spacing: .22em;
+    .contact-strip-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .contact-strip-title {
+      font-size: .74rem;
+      letter-spacing: .2em;
       color: var(--green);
       text-transform: uppercase;
       display: block;
-      margin-bottom: 8px;
-    }
-    .contact-title {
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      font-weight: 400;
-      letter-spacing: .1em;
-      margin-bottom: 4px;
-    }
-    .contact-rule {
-      width: 32px; height: 1px;
-      background: var(--green);
-      margin: 16px 0 36px;
-    }
-    .contact-note {
-      font-size: .88rem;
-      color: #444;
-      margin-bottom: 32px;
-      line-height: 2;
+      margin-bottom: 24px;
     }
     .contact-list {
       display: flex;
       flex-direction: column;
-      gap: 16px;
-      margin-bottom: 44px;
+      gap: 14px;
     }
     .contact-item {
       display: flex;
-      align-items: center;
+      align-items: baseline;
       gap: 16px;
-      font-size: .9rem;
+      font-size: clamp(.85rem, 2vw, .96rem);
     }
-    .contact-item .c-label {
-      min-width: 120px;
-      font-size: .76rem;
+    .c-label {
+      min-width: 110px;
+      font-size: .74rem;
       letter-spacing: .08em;
       color: var(--muted);
+      flex-shrink: 0;
     }
     .contact-item a {
       color: var(--green-dark);
       text-decoration: none;
-      border-bottom: 1px solid var(--green-mid);
+      border-bottom: 1px solid #c4dedd;
       padding-bottom: 1px;
       transition: border-color .2s;
     }
     .contact-item a:hover { border-color: var(--green); }
-    .form-wrap {
-      background: #fff;
-      border: 1px solid var(--border);
-      padding: 40px 36px;
-      max-width: 560px;
-    }
-    .form-title {
-      font-size: .88rem;
-      font-weight: 500;
-      letter-spacing: .1em;
-      color: var(--text);
-      margin-bottom: 24px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #eee;
-    }
-    .form-group { margin-bottom: 20px; }
-    .form-group label {
-      display: block;
-      font-size: .76rem;
-      letter-spacing: .08em;
-      color: #666;
-      margin-bottom: 7px;
-    }
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      border: 1px solid var(--border);
-      padding: 11px 14px;
-      font-size: .9rem;
-      font-family: inherit;
-      color: var(--text);
-      background: #fff;
-      outline: none;
-      border-radius: 0;
-      appearance: none;
-      -webkit-appearance: none;
-      transition: border-color .15s;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus { border-color: var(--green); }
-    .form-group textarea { height: 120px; resize: vertical; }
-    .form-submit {
-      background: var(--green);
-      color: #fff;
-      font-family: inherit;
-      font-size: .88rem;
-      letter-spacing: .14em;
-      padding: 12px 40px;
-      border: 1px solid transparent;
-      cursor: pointer;
-      transition: background .2s;
-    }
-    .form-submit:hover { background: var(--green-dark); }
 
     /* ════════ FOOTER ════════ */
     footer {
       background: var(--green-deep);
-      color: rgba(255,255,255,.5);
-      padding: 44px 40px;
+      color: rgba(255,255,255,.45);
+      padding: 40px 40px;
     }
     .footer-inner {
-      max-width: 900px;
+      max-width: 720px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 12px;
     }
     .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      display: flex; align-items: center; gap: 10px;
     }
     .footer-logo img {
-      width: 30px; height: 30px;
-      object-fit: contain;
-      border-radius: 50%;
-      opacity: .8;
+      width: 28px; height: 28px;
+      object-fit: contain; border-radius: 50%; opacity: .75;
     }
     .footer-logo span {
-      font-size: .76rem;
-      letter-spacing: .05em;
-      color: rgba(255,255,255,.7);
-    }
-    .footer-links {
-      display: flex; gap: 24px; list-style: none;
-    }
-    .footer-links a {
       font-size: .74rem;
-      letter-spacing: .06em;
-      color: rgba(255,255,255,.45);
-      text-decoration: none;
-      transition: color .2s;
-    }
-    .footer-links a:hover { color: rgba(255,255,255,.85); }
-    .footer-copy {
-      width: 100%;
-      font-size: .7rem;
       letter-spacing: .05em;
-      color: rgba(255,255,255,.3);
-      margin-top: 4px;
+      color: rgba(255,255,255,.65);
+    }
+    .footer-copy {
+      font-size: .68rem;
+      letter-spacing: .04em;
     }
 
     /* ════════ RESPONSIVE ════════ */
-    @media (max-width: 768px) {
-      nav { padding: 0 20px; height: 60px; }
-      .nav-links { gap: 18px; }
-      .nav-links li:nth-child(1),
-      .nav-links li:nth-child(2) { display: none; }
-      .hero { height: 360px; }
-      .hero-text { padding: 0 24px 36px; }
-      .hero-logo-badge { top: 20px; left: 24px; }
-      .hero-logo-badge img { width: 44px; height: 44px; }
-      .notice { padding: 36px 24px; }
-      .info-section { padding: 52px 24px; }
-      .info-grid { grid-template-columns: 1fr; gap: 16px; }
-      .closing { padding: 52px 24px; }
-      .contact { padding: 52px 24px; }
-      .form-wrap { padding: 28px 20px; }
-      footer { padding: 36px 24px; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
-    }
-
-    @media (max-width: 480px) {
-      .hero { height: 300px; }
-      .notice-title { font-size: 1.4rem; }
+    @media (max-width: 600px) {
+      nav { padding: 0 18px; }
+      .hero { height: 280px; }
+      .letter-wrap { padding: 56px 20px 72px; }
+      .letter-title { font-size: 1.4rem; }
+      footer { padding: 32px 20px; }
+      .footer-inner { flex-direction: column; }
     }
   </style>
 </head>
@@ -501,45 +307,52 @@
       <span class="ja">一般社団法人 アクセスリーディング協会</span>
     </div>
   </a>
-  <ul class="nav-links">
-    <li><a href="#notice">お知らせ</a></li>
-    <li><a href="#kioku-info">KIOKU</a></li>
-    <li><a href="#contact">お問い合わせ</a></li>
-  </ul>
+  <a href="#contact" class="nav-contact">お問い合わせ</a>
 </nav>
 
 <!-- Hero -->
 <div class="hero">
-  <div class="hero-photo-placeholder">
-    <span>※ 写真は後で追加予定</span>
-  </div>
+  <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <div class="hero-logo-badge">
-    <img src="./ロゴ.png" alt="Access Reading">
-  </div>
-  <div class="hero-text">
+  <div class="hero-center">
+    <img src="./ロゴ.png" alt="アクセスリーディング協会">
     <div class="catch">Your Heart, My Heart</div>
     <div class="sub">― 心を重ねて、共に生きる ―</div>
   </div>
+  <span class="hero-photo-note">※ 写真は後で追加予定</span>
 </div>
 
-<!-- Notice -->
-<div class="notice" id="notice">
-  <div class="notice-inner">
-    <span class="notice-label">大切なお知らせ</span>
-    <h1 class="notice-title">
-      <span>一般社団法人アクセスリーディング協会</span>
-      活動休止のご案内
-    </h1>
-    <div class="notice-body">
+<!-- Letter -->
+<div class="letter-wrap">
+  <div class="letter">
+    <span class="letter-label">大切なお知らせ</span>
+
+    <h1 class="letter-title">活動休止のご案内</h1>
+    <p class="letter-title-sub">一般社団法人 アクセスリーディング協会</p>
+
+    <div class="letter-rule"></div>
+
+    <div class="letter-body">
       <p>会員および関係者の皆様へ</p>
-      <p style="margin-top:12px;">いつもアクセスリーディング協会を応援してくださり、心より感謝申し上げます。代表理事の吉武大輔です。</p>
-      <p style="margin-top:12px;">本日は皆様に大切なお知らせがございます。一般社団法人アクセスリーディング協会は、<strong>2027年3月末日をもって、法人の活動を休止</strong>することといたしました。</p>
-      <p style="margin-top:12px;">2018年に協会を設立して以来、「2030年までに、学校教育にリーディングを取り入れる」というビジョンを掲げ、恐れではなく愛から世界を見るための技術の研究と開発を進めてまいりました。</p>
-      <p style="margin-top:12px;">これまでの活動を通じて、多くの方々がご自身の心の奥にある愛に気づき、心と心を重ねるプロセスを共にしてくださったことは、協会にとってかけがえのない財産です。</p>
-      <p style="margin-top:12px;">これまで協会の活動を支え、ともに学び、あたたかい場を育ててくださったすべての方々に、心から感謝申し上げます。協会としての活動は休止することになりますが、アクセスリーディングで得た気づきや学び、つながりは、これからも皆様の日々の暮らしの中で生き続けるものだと信じています。</p>
+
+      <p>いつもアクセスリーディング協会を応援してくださり、心より感謝申し上げます。代表理事の吉武大輔です。</p>
+
+      <p>本日は皆様に大切なお知らせがございます。一般社団法人アクセスリーディング協会は、<strong>2027年3月末日をもって、法人の活動を休止</strong>することといたしました。</p>
+
+      <p>2018年に協会を設立して以来、「2030年までに、学校教育にリーディングを取り入れる」というビジョンを掲げ、恐れではなく愛から世界を見るための技術の研究と開発を進めてまいりました。</p>
+
+      <p>これまでの活動を通じて、多くの方々がご自身の心の奥にある愛に気づき、心と心を重ねるプロセスを共にしてくださったことは、協会にとってかけがえのない財産です。</p>
+
+      <p>これまで協会の活動を支え、ともに学び、あたたかい場を育ててくださったすべての方々に、心から感謝申し上げます。協会としての活動は休止することになりますが、アクセスリーディングで得た気づきや学び、つながりは、これからも皆様の日々の暮らしの中で生き続けるものだと信じています。</p>
+
+      <p>休止にまつわる具体的な動きにつきましては、下記にまとめておりますのでご確認下さい。</p>
+
+      <p><strong>約9年間、本当にありがとうございました。</strong></p>
+
+      <p>これからも、皆様の人生の中に、アクセスリーディングを通じて育まれた気づきや愛、そして大切なつながりが、生き続けることを心より願っております。</p>
     </div>
-    <div class="notice-date">
+
+    <div class="letter-sign">
       2026年5月13日<br>
       一般社団法人アクセスリーディング協会<br>
       代表理事　吉武大輔
@@ -547,84 +360,10 @@
   </div>
 </div>
 
-<!-- Info Cards -->
-<div class="info-section">
-  <div class="info-inner">
-    <div class="info-grid">
-
-      <div class="info-card">
-        <div class="info-card-head">
-          <div class="info-card-num">1</div>
-          <div class="info-card-title">会員制度・会費について</div>
-        </div>
-        <div class="info-card-body">
-          現在の会員制度は、2027年3月末をもって終了いたします。本年度（2026年4月〜2027年3月）の会費につきましては、お支払いは発生いたしません。<br><br>
-          会費請求の停止手続きおよび、すでにお支払いいただいている方への<strong>返金手続きを進めております</strong>。万が一、停止後に引き落としが発生した場合も、確認のうえ必ず返金対応をさせていただきます。
-        </div>
-      </div>
-
-      <div class="info-card">
-        <div class="info-card-head">
-          <div class="info-card-num">2</div>
-          <div class="info-card-title">認定資格について</div>
-        </div>
-        <div class="info-card-body">
-          現在お持ちの認定資格、ならびにこれまで学ばれたアクセスリーディングの知識・技術・スキルは、今後もご自身の活動に活かしてください。<strong>アクセスリーディングという名称も、これからも自由にお使いいただけます。</strong><br><br>
-          ただし、協会の休止に伴い、「アクセスリーディング協会認定」としての資格表示・講師活動・認定発行は終了します。
-        </div>
-      </div>
-
-      <div class="info-card">
-        <div class="info-card-head">
-          <div class="info-card-num">3</div>
-          <div class="info-card-title">教材・グッズ等の販売について</div>
-        </div>
-        <div class="info-card-body">
-          協会で取り扱っている教材・グッズ等につきましては、<strong>在庫限り・期間限定</strong>で販売いたします。感情Tシャツに加え、RB・RD・SRNにつきましても今回限りご提供いたします。<br><br>
-          販売は6月21日より開始し、在庫がなくなり次第終了。<strong>2026年8月31日</strong>をもって販売ページを終了いたします。
-        </div>
-        <a href="https://forms.gle/di1Q6EzAnNfHkpgAA" target="_blank" class="info-card-link">ARグッズ・教材 申し込みフォーム</a>
-      </div>
-
-      <div class="info-card kioku-card" id="kioku-info">
-        <div class="info-card-head">
-          <div class="info-card-num">4</div>
-          <div class="info-card-title">感情診断テスト「KIOKU」について</div>
-        </div>
-        <div class="info-card-body">
-          感情診断テスト「KIOKU」につきましては、協会の休止後も<strong>2年間（2029年3月末）</strong>は皆様にご利用いただけるようにする予定です。<br><br>
-          ご自身の感情や行動パターンを振り返るための参考ツールとして、個人の責任のもとでご活用ください。
-        </div>
-        <div class="kioku-btn-wrap">
-          <a href="./キオク/" class="btn-kioku-main">診断テストをはじめる</a>
-          <span class="kioku-note">無料・登録不要 ／ 協会休止後も 2029年3月末まで継続利用可能</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<!-- Closing -->
-<div class="closing">
-  <div class="closing-inner">
-    <p>活動休止まで残り約10ヶ月となりますが、最後の日まで、皆様への感謝を胸に、協会としてできることを一つひとつ丁寧に進めてまいります。</p>
-    <p>協会としての歩みは一区切りとなりますが、ここで生まれた学びや気づきが、これからも皆様それぞれの人生の中で生き続け、次なる未来への豊かな土台となっていくことを心より願っております。</p>
-    <p>これまでのご縁とあたたかいご支援に、改めて深く感謝申し上げます。</p>
-    <div class="closing-sign">
-      一般社団法人アクセスリーディング協会<br>
-      代表理事　吉武大輔
-    </div>
-  </div>
-</div>
-
 <!-- Contact -->
-<div class="contact" id="contact">
-  <div class="contact-inner">
-    <span class="contact-label">Contact</span>
-    <h2 class="contact-title">お問い合わせ</h2>
-    <div class="contact-rule"></div>
-    <p class="contact-note">ご質問などがある場合は、以下までお問い合わせください。<br>ご連絡は可能な限り公式LINEにてお願いいたします。</p>
+<div class="contact-strip" id="contact">
+  <div class="contact-strip-inner">
+    <span class="contact-strip-title">Contact</span>
     <div class="contact-list">
       <div class="contact-item">
         <span class="c-label">公式 LINE</span>
@@ -639,28 +378,6 @@
         <span>050-7114-4778</span>
       </div>
     </div>
-
-    <div class="form-wrap">
-      <div class="form-title">お問い合わせフォーム</div>
-      <form action="https://formsubmit.co/access.reading2018@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="【HPお問い合わせ】アクセスリーディング協会">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="./ありがとう.html">
-        <div class="form-group">
-          <label>お名前 *</label>
-          <input type="text" name="name" required placeholder="山田 太郎">
-        </div>
-        <div class="form-group">
-          <label>メールアドレス *</label>
-          <input type="email" name="email" required placeholder="example@email.com">
-        </div>
-        <div class="form-group">
-          <label>お問い合わせ内容 *</label>
-          <textarea name="message" required placeholder="ご要望・ご質問をご記入ください"></textarea>
-        </div>
-        <button type="submit" class="form-submit">送　信</button>
-      </form>
-    </div>
   </div>
 </div>
 
@@ -668,15 +385,10 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <img src="./logo-icon.jpg" alt="AR協会">
+      <img src="./logo-icon.jpg" alt="">
       <span>一般社団法人 アクセスリーディング協会</span>
     </div>
-    <ul class="footer-links">
-      <li><a href="#notice">お知らせ</a></li>
-      <li><a href="#kioku-info">KIOKU</a></li>
-      <li><a href="#contact">お問い合わせ</a></li>
-    </ul>
-    <p class="footer-copy">© 一般社団法人アクセスリーディング協会　無断転載・複製を禁じます。</p>
+    <span class="footer-copy">© 一般社団法人アクセスリーディング協会</span>
   </div>
 </footer>
 
