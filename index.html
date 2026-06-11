@@ -83,12 +83,13 @@
     /* ════════ HERO ════════ */
     .hero {
       margin-top: 64px;
-      position: relative;
-      height: 460px;
-      overflow: hidden;
+      width: 100%;
+      line-height: 0;
     }
-    @media (max-width: 600px) {
-      .hero { height: 240px; }
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     /* ════════ LETTER ════════ */
@@ -271,7 +272,7 @@
 
 <!-- Hero -->
 <div class="hero">
-  <img src="./HPimage1.png" alt="Your Heart, My Heart ― 心を重ねて、共に生きる ―" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;">
+  <img src="./HPimage1.png" alt="Your Heart, My Heart ― 心を重ねて、共に生きる ―">
 </div>
 
 <!-- Letter -->
