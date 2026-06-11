@@ -58,6 +58,8 @@
     #screen-start .scale-guide td { color: #444; }
 
     /* ── Question screen ── */
+    #screen-question .card { display: flex; flex-direction: column; justify-content: space-between; }
+    #screen-question .q-footer { margin-top: 20px; }
     .progress-wrap { margin-bottom: 20px; }
     .progress-label { font-size: .82rem; color: #888; margin-bottom: 4px; }
     .progress-bar { height: 6px; background: #e0e0e0; border-radius: 4px; overflow: hidden; }
@@ -66,7 +68,7 @@
     .category-badge { display: none; }
 
     .q-number { font-size: .8rem; color: #aaa; margin-bottom: 4px; font-weight: 700; }
-    .q-text   { font-size: .95rem; line-height: 1.7; min-height: calc(.95rem * 1.7 * 2); margin-bottom: 20px; font-weight: 700; }
+    .q-text   { font-size: .9rem; line-height: 1.7; margin-bottom: 16px; font-weight: 700; }
 
     .scale-buttons {
       display: grid;
@@ -95,7 +97,6 @@
     .nav-row {
       display: flex;
       justify-content: space-between;
-      margin-top: 20px;
       gap: 10px;
     }
 
@@ -214,16 +215,14 @@
 <body>
 
 <header>
-  <a href="../" style="display:block;text-align:center;">
-    <img src="../ロゴ.png" alt="アクセスリーディング協会" style="max-width:200px;width:100%;display:block;margin:0 auto 8px;">
-  </a>
-  <p style="font-size:.82rem;color:#888;letter-spacing:.08em;">感情診断テスト KIOKU</p>
+  <img src="./716189874_1985951575625506_5028431923378854150_n.jpg" alt="感情診断テスト KIOKU" style="max-width:280px;width:100%;display:block;margin:0 auto;">
 </header>
 
 <!-- ① スタート画面 -->
 <section id="screen-start" class="screen active">
   <div class="card">
     <div class="intro">
+      <p>各質問に答えると、今のあなたの主感情がわかります。定期的に受けることで、感情の変化を確認できます。</p>
       <ul style="margin-top:14px;">
         <li>全48問・目安回答時間5〜10分</li>
       </ul>
@@ -241,28 +240,33 @@
     </div>
 
     <button class="btn btn-primary" onclick="startDiagnosis()">はじめる</button>
+    <p style="text-align:center;font-size:.78rem;color:#aaa;margin-top:16px;">一般社団法人アクセスリーディング協会</p>
   </div>
 </section>
 
 <!-- ② 設問画面 -->
 <section id="screen-question" class="screen">
   <div class="card">
-    <div class="progress-wrap">
-      <div class="progress-label" id="progress-label"></div>
-      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="q-content">
+      <div class="progress-wrap">
+        <div class="progress-label" id="progress-label"></div>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+      <span class="category-badge" id="category-badge"></span>
+      <div class="q-number" id="q-number"></div>
+      <div class="q-text" id="q-text"></div>
+      <div class="scale-buttons" id="scale-buttons"></div>
     </div>
-    <span class="category-badge" id="category-badge"></span>
-    <div class="q-number" id="q-number"></div>
-    <div class="q-text" id="q-text"></div>
-    <div class="scale-buttons" id="scale-buttons"></div>
-    <div class="nav-row">
-      <button class="btn btn-secondary btn-small" id="btn-prev" onclick="movePrev()">← 前へ</button>
-      <button class="btn btn-secondary btn-small" id="btn-next" onclick="moveNext()">次へ →</button>
+    <div class="q-footer">
+      <div class="nav-row">
+        <button class="btn btn-secondary btn-small" id="btn-prev" onclick="movePrev()">← 前へ</button>
+        <button class="btn btn-secondary btn-small" id="btn-next" onclick="moveNext()">次へ →</button>
+      </div>
+      <div id="all-answered-msg" style="display:none;text-align:center;margin-top:16px;padding:12px;background:#f0f7f6;border-radius:8px;font-size:.9rem;color:#3A9E90;">
+        すべての質問に回答しました！
+      </div>
+      <button class="btn btn-primary" id="btn-submit" onclick="showResult()" style="display:none;">結果を見る</button>
     </div>
-    <div id="all-answered-msg" style="display:none;text-align:center;margin-top:16px;padding:12px;background:#f0f7f6;border-radius:8px;font-size:.9rem;color:#3A9E90;">
-      すべての質問に回答しました！
-    </div>
-    <button class="btn btn-primary" id="btn-submit" onclick="showResult()" style="display:none;">結果を見る</button>
   </div>
 </section>
 
@@ -313,7 +317,11 @@
 // ─────────────────────────────────────────
 const EMOTIONS = ["怒り","嫉妬","悲しみ","無価値感","寂しさ","混乱","不安","罪悪感"];
 const CODES    = ["A","B","C","D","E","F","G","H"];
-const COLORS   = ["#C94040","#9CB228","#D07830","#5A9C3C","#3A9E90","#3568B0","#5048A8","#8050A8"];
+const COLORS   = ["#C94040","#E87520","#D4A820","#5A9C3C","#3A9E90","#3AAEBC","#3568B0","#7050A8"];
+function colorAlpha(hex, a) {
+  const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+  return `rgba(${r},${g},${b},${a})`;
+}
 
 const QUESTIONS = [
   // A 怒り
@@ -570,7 +578,7 @@ function displayResult(scores, dateStr) {
 
   // BEST 3
   document.getElementById("best3").innerHTML = top3.map(({ i, s, rank }) =>
-    `<div class="best3-item" style="background:${COLORS[i]}">
+    `<div class="best3-item" style="background:${colorAlpha(COLORS[i], 0.8)}">
       <div class="rank">${rank}位</div>
       <div class="name">${EMOTIONS[i]}</div>
       <div class="score">${s}点</div>
@@ -585,7 +593,7 @@ function displayResult(scores, dateStr) {
     const label = rank === 1 ? `${rank}位（主感情）` : `${rank}位`;
     return `
     <div class="detail-section">
-      <h3 style="background:${COLORS[i]}">${label}：${EMOTIONS[i]}（${s}点）</h3>
+      <h3 style="background:${colorAlpha(COLORS[i], 0.8)}">${label}：${EMOTIONS[i]}（${s}点）</h3>
       <p>${DESCRIPTIONS[i].replace(/\n/g, "<br>")}</p>
     </div>`;
   }).join("");
