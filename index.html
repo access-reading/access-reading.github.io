@@ -99,26 +99,34 @@
       overflow: hidden;
       line-height: 0;
     }
+    .hero-photo-wrap {
+      position: relative;
+      overflow: hidden;
+      line-height: 0;
+      max-height: 520px;
+    }
     .hero-photo {
       width: 100%;
-      height: auto;
+      height: 520px;
+      object-fit: cover;
+      object-position: center 15%;
       display: block;
     }
     .hero-overlay {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 45%;
+      height: 38%;
       background: linear-gradient(
         to bottom,
         rgba(0,175,160,0) 0%,
-        rgba(0,175,160,.85) 60%,
+        rgba(0,175,160,.88) 50%,
         rgba(0,155,142,1) 100%
       );
     }
     .hero-content {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      padding: 0 40px 28px;
+      padding: 0 40px 32px;
       display: flex;
       align-items: center;
       gap: 24px;
@@ -142,17 +150,17 @@
     .hero-text-block { color: #fff; flex: 1; }
     .hero-catch {
       font-family: "Noto Serif JP", serif;
-      font-size: clamp(1.4rem, 3.5vw, 2.6rem);
+      font-size: clamp(1.8rem, 4.5vw, 3.4rem);
       font-weight: 400;
-      letter-spacing: .12em;
+      letter-spacing: .14em;
       text-shadow: 0 2px 8px rgba(0,0,0,.15);
-      line-height: 1.3;
-      margin-bottom: 4px;
+      line-height: 1.2;
+      margin-bottom: 6px;
     }
     .hero-sub {
-      font-size: clamp(.8rem, 1.6vw, 1rem);
-      letter-spacing: .12em;
-      opacity: .92;
+      font-size: clamp(.88rem, 1.8vw, 1.15rem);
+      letter-spacing: .14em;
+      opacity: .95;
     }
     /* 左の手のイラスト */
     .hero-deco-left {
