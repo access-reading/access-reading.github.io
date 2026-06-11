@@ -12,11 +12,11 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --green:      #3A9E90;
-      --green-dark: #2b7a6e;
-      --green-deep: #1e5c52;
-      --green-pale: #f2f8f7;
-      --border:     #d8e8e6;
+      --green:      #00AFA0;  /* PANTONE 326 / C81 M6 Y43 K0 */
+      --green-dark: #008C80;
+      --green-deep: #006A60;
+      --green-pale: #f0faf9;
+      --border:     #ccecea;
       --text:       #1e1e1e;
       --muted:      #5a5a5a;
     }
@@ -249,10 +249,11 @@
     /* ════════ RESPONSIVE ════════ */
     @media (max-width: 600px) {
       nav { padding: 0 18px; }
-      .hero { height: 280px; }
-      .letter-wrap { padding: 56px 20px 72px; }
+      .letter-wrap { padding: 32px 18px 48px; }
       .letter-title { font-size: 1.4rem; }
-      footer { padding: 32px 20px; }
+      .letter-title-sub { margin-bottom: 28px; }
+      .letter-rule { margin-bottom: 24px; }
+      footer { padding: 28px 18px; }
       .footer-inner { flex-direction: column; }
     }
   </style>
