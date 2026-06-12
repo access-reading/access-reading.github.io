@@ -86,16 +86,17 @@
     }
     .hero-logobar {
       background: #fff;
-      padding: 6px 24px;
-      text-align: center;
+      padding: 0 24px;
       border-bottom: 1px solid #eee;
       display: flex;
       align-items: center;
       justify-content: center;
     }
     .hero-logobar img {
-      width: clamp(300px, 46vw, 620px);
-      height: auto;
+      height: clamp(54px, 6vw, 82px);
+      width: auto;
+      max-width: 90vw;
+      display: block;
     }
     .hero-photo-wrap {
       position: relative;
@@ -169,8 +170,7 @@
       opacity: .95;
     }
     @media (max-width: 600px) {
-      .hero-logobar { padding: 12px 20px; text-align: center; }
-      .hero-logobar img { width: auto; max-width: 84vw; height: 54px; }
+      .hero-logobar { padding: 0 16px; }
       .hero-photo { height: 400px; object-position: center 2%; }
       .hero-content { padding: 0 12px 18px; gap: 10px; }
       .hero-icon { width: 80px; height: 80px; }
