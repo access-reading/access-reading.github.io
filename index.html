@@ -89,10 +89,14 @@
       padding: 22px 24px;
       text-align: center;
       border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .hero-logobar img {
       height: 64px;
       width: auto;
+      max-width: 280px;
     }
     .hero-photo-wrap {
       position: relative;
@@ -162,32 +166,33 @@
       letter-spacing: .14em;
       opacity: .95;
     }
-    /* 左の手のイラスト */
+    /* 左右のハンド＆ハートイラスト */
     .hero-deco-left {
       position: absolute;
       left: 0; bottom: 0;
-      width: 120px; height: 110px;
-      opacity: .25;
+      width: clamp(90px, 12vw, 150px);
+      opacity: .28;
       pointer-events: none;
     }
-    /* 右の∞マーク */
     .hero-deco-right {
       position: absolute;
-      right: 32px; bottom: 22px;
-      font-size: clamp(3rem, 6vw, 5rem);
-      color: rgba(255,255,255,.3);
-      line-height: 1;
-      font-weight: 100;
-      letter-spacing: -.05em;
+      right: 0; bottom: 0;
+      width: clamp(90px, 12vw, 150px);
+      opacity: .28;
       pointer-events: none;
-      font-family: serif;
+      transform: scaleX(-1);
     }
     @media (max-width: 600px) {
-      .hero-logobar img { height: 34px; }
-      .hero-content { padding: 0 16px 18px; gap: 12px; }
-      .hero-icon img { width: 50px; height: 50px; }
-      .hero-deco-left { width: 70px; height: 65px; }
-      .hero-deco-right { right: 12px; font-size: 2.4rem; }
+      .hero-logobar { padding: 14px 20px; text-align: center; }
+      .hero-logobar img { height: 46px; }
+      .hero-photo { height: 400px; object-position: center 10%; }
+      .hero-content { padding: 0 12px 18px; gap: 10px; }
+      .hero-icon { width: 60px; height: 60px; }
+      .hero-icon img { width: 48px; }
+      .hero-catch { font-size: 1.45rem; letter-spacing: .06em; }
+      .hero-sub { font-size: .8rem; letter-spacing: .08em; }
+      .hero-deco-left { width: 65px; height: 60px; }
+      .hero-deco-right { right: 10px; font-size: 2rem; bottom: 24px; }
     }
 
     /* ════════ LETTER ════════ */
@@ -378,13 +383,29 @@
   <div class="hero-photo-wrap">
     <img class="hero-photo" src="./photo.hakone.png" alt="アクセスリーディング協会 集合写真">
     <div class="hero-overlay"></div>
-    <!-- 左の手のイラスト（SVG） -->
-    <svg class="hero-deco-left" viewBox="0 0 120 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30 90 C20 75 10 60 15 45 C18 35 28 32 35 38 L35 20 C35 15 40 12 44 15 L44 10 C44 5 50 3 54 7 L54 12 C56 8 62 8 64 13 L64 18 C67 15 73 17 73 23 L73 55 C80 50 88 52 88 60 C88 72 78 85 65 95 Z" stroke="white" stroke-width="2" fill="none"/>
-      <path d="M44 35 C44 28 54 25 54 35" stroke="white" stroke-width="1.5" fill="none"/>
-      <path d="M54 33 C54 26 64 26 64 33" stroke="white" stroke-width="1.5" fill="none"/>
-      <path d="M35 38 L35 55" stroke="white" stroke-width="1.5"/>
-      <path d="M22 15 C22 9 30 6 33 12 C36 6 44 9 44 15" stroke="white" stroke-width="1.5" fill="none"/>
+    <!-- 左の手＋ハートイラスト（SVG） -->
+    <svg class="hero-deco-left" viewBox="0 0 140 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- 左手（手のひら） -->
+      <path d="M20 120 C10 100 5 80 10 62 C13 50 22 46 30 52 L30 30 C30 24 36 21 41 24 L41 18 C41 12 47 10 52 14 L52 20 C54 15 61 15 64 21 L64 26 C68 22 75 25 75 33 L75 68 C83 63 93 66 93 76 C93 90 82 108 68 118 Z" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 指の区切り線 -->
+      <path d="M41 44 L41 24" stroke="white" stroke-width="1" stroke-linecap="round"/>
+      <path d="M52 42 L52 20" stroke="white" stroke-width="1" stroke-linecap="round"/>
+      <path d="M64 43 L64 26" stroke="white" stroke-width="1" stroke-linecap="round"/>
+      <!-- ハート -->
+      <path d="M40 78 C40 70 48 66 52 72 C56 66 64 70 64 78 C64 86 52 94 52 94 C52 94 40 86 40 78 Z" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 右手（軽く添える） -->
+      <path d="M85 115 C95 100 105 82 102 65 C99 52 90 48 82 54" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      <path d="M82 54 C78 46 68 46 68 55" stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    </svg>
+    <!-- 右の手＋ハートイラスト（左右反転） -->
+    <svg class="hero-deco-right" viewBox="0 0 140 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 120 C10 100 5 80 10 62 C13 50 22 46 30 52 L30 30 C30 24 36 21 41 24 L41 18 C41 12 47 10 52 14 L52 20 C54 15 61 15 64 21 L64 26 C68 22 75 25 75 33 L75 68 C83 63 93 66 93 76 C93 90 82 108 68 118 Z" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M41 44 L41 24" stroke="white" stroke-width="1" stroke-linecap="round"/>
+      <path d="M52 42 L52 20" stroke="white" stroke-width="1" stroke-linecap="round"/>
+      <path d="M64 43 L64 26" stroke="white" stroke-width="1" stroke-linecap="round"/>
+      <path d="M40 78 C40 70 48 66 52 72 C56 66 64 70 64 78 C64 86 52 94 52 94 C52 94 40 86 40 78 Z" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M85 115 C95 100 105 82 102 65 C99 52 90 48 82 54" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+      <path d="M82 54 C78 46 68 46 68 55" stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round"/>
     </svg>
     <div class="hero-content">
       <div class="hero-icon">
@@ -395,7 +416,6 @@
         <div class="hero-sub">― 心を重ねて、共に生きる ―</div>
       </div>
     </div>
-    <div class="hero-deco-right">∞</div>
   </div>
 </div>
 
