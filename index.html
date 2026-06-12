@@ -94,7 +94,7 @@
       justify-content: center;
     }
     .hero-logobar img {
-      width: clamp(200px, 28vw, 380px);
+      width: clamp(260px, 38vw, 520px);
       height: auto;
     }
     .hero-photo-wrap {
@@ -131,7 +131,7 @@
     .hero-content {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      padding: 0 40px 32px;
+      padding: 0 215px 32px 40px;
       display: flex;
       align-items: center;
       gap: 24px;
@@ -139,17 +139,18 @@
     }
     .hero-icon {
       flex-shrink: 0;
-      width: 80px; height: 80px;
+      width: 100px; height: 100px;
       border-radius: 50%;
       background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 0 0 2px rgba(255,255,255,.4);
+      padding: 8px;
     }
     .hero-icon img {
-      width: 64px;
-      height: auto;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
     }
     .hero-text-block { color: #fff; flex: 1; }
@@ -167,18 +168,24 @@
       letter-spacing: .14em;
       opacity: .95;
     }
-    .hero-deco-left, .hero-deco-right { display: none; }
+    .hero-deco-hands {
+      position: absolute;
+      right: 36px;
+      bottom: 22px;
+      width: 164px;
+      opacity: 0.72;
+      pointer-events: none;
+      z-index: 3;
+    }
     @media (max-width: 600px) {
       .hero-logobar { padding: 14px 20px; text-align: center; }
       .hero-logobar img { height: 46px; }
       .hero-photo { height: 400px; object-position: center 10%; }
       .hero-content { padding: 0 12px 18px; gap: 10px; }
-      .hero-icon { width: 60px; height: 60px; }
-      .hero-icon img { width: 48px; }
+      .hero-icon { width: 80px; height: 80px; }
       .hero-catch { font-size: 1.45rem; letter-spacing: .06em; }
       .hero-sub { font-size: .8rem; letter-spacing: .08em; }
-      .hero-deco-left { width: 65px; height: 60px; }
-      .hero-deco-right { right: 10px; font-size: 2rem; bottom: 24px; }
+      .hero-deco-hands { display: none; }
     }
 
     /* ════════ LETTER ════════ */
@@ -369,33 +376,34 @@
   <div class="hero-photo-wrap">
     <img class="hero-photo" src="./photo.hakone.png" alt="アクセスリーディング協会 集合写真">
     <div class="hero-overlay"></div>
-    <!-- 左の手＋ハートイラスト（SVG） -->
-    <svg class="hero-deco-left" viewBox="0 0 140 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- 左手（手のひら） -->
-      <path d="M20 120 C10 100 5 80 10 62 C13 50 22 46 30 52 L30 30 C30 24 36 21 41 24 L41 18 C41 12 47 10 52 14 L52 20 C54 15 61 15 64 21 L64 26 C68 22 75 25 75 33 L75 68 C83 63 93 66 93 76 C93 90 82 108 68 118 Z" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <!-- 指の区切り線 -->
-      <path d="M41 44 L41 24" stroke="white" stroke-width="1" stroke-linecap="round"/>
-      <path d="M52 42 L52 20" stroke="white" stroke-width="1" stroke-linecap="round"/>
-      <path d="M64 43 L64 26" stroke="white" stroke-width="1" stroke-linecap="round"/>
-      <!-- ハート -->
-      <path d="M40 78 C40 70 48 66 52 72 C56 66 64 70 64 78 C64 86 52 94 52 94 C52 94 40 86 40 78 Z" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <!-- 右手（軽く添える） -->
-      <path d="M85 115 C95 100 105 82 102 65 C99 52 90 48 82 54" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-      <path d="M82 54 C78 46 68 46 68 55" stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round"/>
-    </svg>
-    <!-- 右の手＋ハートイラスト（左右反転） -->
-    <svg class="hero-deco-right" viewBox="0 0 140 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M20 120 C10 100 5 80 10 62 C13 50 22 46 30 52 L30 30 C30 24 36 21 41 24 L41 18 C41 12 47 10 52 14 L52 20 C54 15 61 15 64 21 L64 26 C68 22 75 25 75 33 L75 68 C83 63 93 66 93 76 C93 90 82 108 68 118 Z" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M41 44 L41 24" stroke="white" stroke-width="1" stroke-linecap="round"/>
-      <path d="M52 42 L52 20" stroke="white" stroke-width="1" stroke-linecap="round"/>
-      <path d="M64 43 L64 26" stroke="white" stroke-width="1" stroke-linecap="round"/>
-      <path d="M40 78 C40 70 48 66 52 72 C56 66 64 70 64 78 C64 86 52 94 52 94 C52 94 40 86 40 78 Z" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M85 115 C95 100 105 82 102 65 C99 52 90 48 82 54" stroke="white" stroke-width="1.4" fill="none" stroke-linecap="round"/>
-      <path d="M82 54 C78 46 68 46 68 55" stroke="white" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+    <!-- 手書き風 手＋ハートイラスト -->
+    <svg class="hero-deco-hands" viewBox="0 0 180 148" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- 左手（上向き） -->
+      <g transform="translate(5,30) scale(0.74)">
+        <path d="M20 120 C10 100 5 80 10 62 C13 50 22 46 30 52 L30 30 C30 24 36 21 41 24 L41 18 C41 12 47 10 52 14 L52 20 C54 15 61 15 64 21 L64 26 C68 22 75 25 75 33 L75 68 C83 63 93 66 93 76 C93 90 82 108 68 118 Z"
+          stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M41 44 L41 24" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M52 42 L52 20" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M64 45 L64 26" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+      <!-- 右手（上向き・左右反転） -->
+      <g transform="translate(175,30) scale(-0.74,0.74)">
+        <path d="M20 120 C10 100 5 80 10 62 C13 50 22 46 30 52 L30 30 C30 24 36 21 41 24 L41 18 C41 12 47 10 52 14 L52 20 C54 15 61 15 64 21 L64 26 C68 22 75 25 75 33 L75 68 C83 63 93 66 93 76 C93 90 82 108 68 118 Z"
+          stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M41 44 L41 24" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M52 42 L52 20" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M64 45 L64 26" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </g>
+      <!-- ハート（両手の指先のあいだに浮かぶ） -->
+      <path d="M 90,44 C 83,28 63,26 63,42 C 63,59 90,73 90,73 C 90,73 117,59 117,42 C 117,26 97,28 90,44 Z"
+        stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 両手をつなぐやわらかいライン -->
+      <path d="M 13,117 C 55,130 125,130 167,117"
+        stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
     </svg>
     <div class="hero-content">
       <div class="hero-icon">
-        <img src="./logo-horizontal.png" alt="Access Reading">
+        <img src="./logo-icon.jpg" alt="Access Reading">
       </div>
       <div class="hero-text-block">
         <div class="hero-catch">Your Heart, My Heart</div>
