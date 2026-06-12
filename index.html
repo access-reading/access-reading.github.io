@@ -93,7 +93,7 @@
       justify-content: center;
     }
     .hero-logobar img {
-      height: clamp(54px, 6vw, 82px);
+      height: clamp(68px, 8vw, 108px);
       width: auto;
       max-width: 90vw;
       display: block;
@@ -113,10 +113,10 @@
       width: 100%;
       height: 520px;
       object-fit: cover;
-      object-position: center 25%;
+      object-position: center 35%;
       display: block;
-      transform: scale(1.12);
-      transform-origin: center 35%;
+      transform: scale(1.03);
+      transform-origin: center 30%;
     }
     .hero-overlay {
       position: absolute;
@@ -141,18 +141,16 @@
     }
     .hero-icon {
       flex-shrink: 0;
-      width: 100px; height: 100px;
-      border-radius: 50%;
       background: #fff;
+      border-radius: 6px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
     }
     .hero-icon img {
-      width: 88%;
-      height: 88%;
-      object-fit: contain;
+      height: 44px;
+      width: auto;
     }
     .hero-text-block { color: #fff; }
     .hero-catch {
@@ -173,7 +171,8 @@
       .hero-logobar { padding: 0 16px; }
       .hero-photo { height: 400px; object-position: center 2%; }
       .hero-content { padding: 0 12px 18px; gap: 10px; }
-      .hero-icon { width: 80px; height: 80px; }
+      .hero-icon { padding: 7px 14px; }
+      .hero-icon img { height: 34px; }
       .hero-catch { font-size: 1.45rem; letter-spacing: .06em; }
       .hero-sub { font-size: .8rem; letter-spacing: .08em; }
 .hero-content { padding: 0 20px 20px; justify-content: center; }
@@ -369,7 +368,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-icon">
-        <img src="./logo-icon.jpg" alt="Access Reading">
+        <img src="./logo-horizontal.png" alt="Access Reading">
       </div>
       <div class="hero-text-block">
         <div class="hero-catch">Your Heart, My Heart</div>
