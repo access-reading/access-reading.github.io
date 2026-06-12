@@ -131,7 +131,7 @@
     .hero-content {
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      padding: 0 215px 32px 40px;
+      padding: 0 126px 32px 122px;
       display: flex;
       align-items: center;
       gap: 24px;
@@ -170,10 +170,19 @@
     }
     .hero-deco-hands {
       position: absolute;
-      right: 36px;
-      bottom: 22px;
-      width: 164px;
+      left: 22px;
+      bottom: 18px;
+      width: 88px;
       opacity: 0.72;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .hero-deco-infinity {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      width: 92px;
+      opacity: 0.65;
       pointer-events: none;
       z-index: 3;
     }
@@ -185,7 +194,8 @@
       .hero-icon { width: 80px; height: 80px; }
       .hero-catch { font-size: 1.45rem; letter-spacing: .06em; }
       .hero-sub { font-size: .8rem; letter-spacing: .08em; }
-      .hero-deco-hands { display: none; }
+      .hero-deco-hands, .hero-deco-infinity { display: none; }
+      .hero-content { padding: 0 20px 20px; }
     }
 
     /* ════════ LETTER ════════ */
@@ -400,6 +410,17 @@
       <!-- 両手をつなぐやわらかいライン -->
       <path d="M 13,117 C 55,130 125,130 167,117"
         stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+    </svg>
+    <!-- 無限大マーク（右側） -->
+    <svg class="hero-deco-infinity" viewBox="0 0 110 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 55,26
+        C 55,16 42,8 28,14
+        C 14,20 14,32 28,38
+        C 42,44 55,36 55,26
+        C 55,16 68,8 82,14
+        C 96,20 96,32 82,38
+        C 68,44 55,36 55,26"
+        stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <div class="hero-content">
       <div class="hero-icon">
