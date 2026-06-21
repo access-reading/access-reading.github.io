@@ -506,19 +506,7 @@ function renderQuestion() {
   // question（シャッフル順で表示）
   const qIdx = questionOrder[current];
   document.getElementById("q-number").textContent = `Q${current + 1}`;
-  // 設問の最後の2文字はセットで折り返す（2行目が1文字だけになるのを防ぐ）
-  const qStr = QUESTIONS[qIdx];
-  const qEl  = document.getElementById("q-text");
-  qEl.textContent = "";
-  if (qStr.length > 2) {
-    qEl.appendChild(document.createTextNode(qStr.slice(0, -2)));
-    const tail = document.createElement("span");
-    tail.style.whiteSpace = "nowrap";
-    tail.textContent = qStr.slice(-2);
-    qEl.appendChild(tail);
-  } else {
-    qEl.textContent = qStr;
-  }
+  document.getElementById("q-text").textContent    = QUESTIONS[qIdx];
 
   // scale buttons
   const container = document.getElementById("scale-buttons");
