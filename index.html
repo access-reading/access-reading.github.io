@@ -258,6 +258,32 @@
       line-height: 2.4;
     }
 
+    /* ════════ MATERIAL STRIP ════════ */
+    .material-strip {
+      background: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px;
+    }
+    .material-desc {
+      font-size: clamp(.9rem, 2vw, 1rem);
+      color: var(--muted);
+      line-height: 2;
+      margin-bottom: 24px;
+    }
+    .material-btn {
+      display: inline-block;
+      background: var(--green);
+      color: #fff;
+      font-size: 1rem;
+      letter-spacing: .1em;
+      padding: 14px 40px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background .2s;
+    }
+    .material-btn:hover { background: var(--green-dark); }
+
     /* ════════ CONTACT STRIP ════════ */
     .contact-strip {
       background: var(--green-pale);
@@ -414,6 +440,15 @@
       一般社団法人アクセスリーディング協会<br>
       代表理事　吉武大輔
     </div>
+  </div>
+</div>
+
+<!-- 教材販売 -->
+<div class="material-strip">
+  <div class="contact-strip-inner">
+    <span class="contact-strip-title">教材のご購入</span>
+    <p class="material-desc">アクセスリーディング協会の教材を一般販売しております。<br>ご購入はこちらのフォームからお申し込みください。</p>
+    <a class="material-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSf-gNdCIt6gGp4q4H6QmXU6nCYp4fxVoGAPbPuMgaBEEqsiDA/viewform?usp=preview" target="_blank">購入フォームへ</a>
   </div>
 </div>
 
